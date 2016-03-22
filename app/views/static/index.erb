@@ -1,2 +1,24 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<h1>Bitly Clone</h1>
+<p>This is a simple app to shorten your URLs</p>
+
+<form action="/urls" method="post">
+    Enter Long URL:
+    <input type="text" name="long_url">
+    <input type="submit" value="Submit">
+</form>
+
+<% @url.each do |item|%>
+<p>Long URL:</p>
+  <%=item.url_long%>
+  <br>
+<p>Short URL:</p>
+  <%=item.url_short%>
+  <br>
+<p>Click counter for short url: <%=item.click_count%></p>
+<%end%>
+
+<form action="/urls1" method="post">
+    Enter Short URL:
+    <input type="text" name="short_url">
+    <input type="submit" value="GO">
+</form>
